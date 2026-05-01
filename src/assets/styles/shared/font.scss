@@ -1,0 +1,22 @@
+@use "variables" as *;
+
+@font-face {
+  font-family: $regular;
+  src: url('../../fonts/Inter-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: $bold;
+  src: url('../../fonts/Inter-Bold.ttf') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: $semiBold;
+  src: url('../../fonts/Inter-SemiBold.ttf') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: $medium;
+  src: url('../../fonts/Inter-Medium.ttf') format('truetype');
+  font-display: swap;
+}

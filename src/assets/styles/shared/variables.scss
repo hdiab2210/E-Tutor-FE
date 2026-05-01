@@ -1,0 +1,23 @@
+@use "colors.scss" as *;
+
+//fonts
+$regular: "Inter-Regular";
+$bold: "Inter-Bold";
+$semiBold: "Inter-SemiBold";
+$medium: "Inter-Medium";
+
+//font-weight
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semiBold: 600;
+$font-weight-bold: 700;
+
+// shadows
+$dark_shadow: 0px 0px 8px 0px #3b82f61f;
+
+
+// forms
+$input-border: $grey_100;
+$input-placeholder: $grey_500;
+$input-focus: $primary;
+$input-label: $grey_900;

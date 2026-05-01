@@ -1,0 +1,18 @@
+<nav class="main-navbar">
+  <div class="container">
+    <ul class="nav-links d-flex align-items-center gap-1">
+      @for (link of navLinks; track link.path) {
+        <li>
+          <a
+            [routerLink]="link.path"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: link.exact }"
+          >{{ link.label }}</a>
+        </li>
+      }
+      <li class="become-instructor-item">
+        <a routerLink="/become-instructor" routerLinkActive="active">Become an Instructor</a>
+      </li>
+    </ul>
+  </div>
+</nav>

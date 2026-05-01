@@ -1,0 +1,26 @@
+@use "colors" as *;
+@use "variables" as *;
+@use "functions" as *;
+
+%label-bold {
+  font-weight: $font-weight-semiBold;
+  color: $grey-900;
+}
+
+%header-large {
+  font-size: pxToRem(40);
+  font-weight: $font-weight-bold;
+  color: $grey-900;
+}
+
+%header-medium {
+  font-size: pxToRem(24);
+  font-weight: $font-weight-semiBold;
+  color: $grey-900;
+}
+
+%header-regular {
+  font-size: pxToRem(14);
+  color: $grey_700;
+  font-weight: $font-weight-regular;
+}

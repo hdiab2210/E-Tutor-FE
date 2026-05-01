@@ -1,0 +1,103 @@
+@use '../../../../assets/styles/shared/colors' as *;
+@use '../../../../assets/styles/shared/variables' as *;
+@use '../../../../assets/styles/shared/functions' as *;
+
+.main-header {
+  background: $white;
+  border-bottom: 1px solid $grey-200;
+
+  .header-inner {
+    height: pxToRem(72);
+
+    @media (max-width: 576px) {
+      height: pxToRem(60);
+    }
+  }
+
+  // ── Logo ────────────────────────────────────────────
+  .logo {
+    text-decoration: none;
+
+    i {
+      color: $primary;
+      font-size: pxToRem(22);
+
+      @media (max-width: 576px) {
+        font-size: pxToRem(18);
+      }
+    }
+
+    span {
+      font-size: pxToRem(18);
+      font-weight: $font-weight-bold;
+      color: $black;
+
+      @media (max-width: 576px) {
+        font-size: pxToRem(16);
+      }
+    }
+  }
+
+  // ── Search ──────────────────────────────────────────
+  .search-wrapper {
+    max-width: pxToRem(420);
+
+    @media (max-width: 1200px) {
+      max-width: pxToRem(320);
+    }
+
+    ::ng-deep .p-iconfield {
+      width: 100%;
+
+      input {
+        width: 100%;
+        border-radius: pxToRem(8);
+        font-size: pxToRem(14);
+      }
+    }
+  }
+
+  // ── Hint text (auth layout) ─────────────────────────
+  .hint-text {
+    font-size: pxToRem(14);
+    color: $grey_700;
+    white-space: nowrap;
+  }
+
+  // ── Username ────────────────────────────────────────
+  .user-name {
+    font-size: pxToRem(14);
+    font-weight: $font-weight-semiBold;
+    color: $grey_700;
+  }
+
+  // ── Button overrides ────────────────────────────────
+  ::ng-deep {
+    .outline-btn.p-button {
+      background: transparent;
+      border: 1px solid $primary;
+      color: $primary;
+      border-radius: pxToRem(8);
+      font-size: pxToRem(14);
+      white-space: nowrap;
+
+      &:hover {
+        background: rgba($primary, 0.06);
+      }
+    }
+
+    .solid-btn.p-button {
+      background: $primary;
+      border-color: $primary;
+      color: $white;
+      border-radius: pxToRem(8);
+      font-size: pxToRem(14);
+      white-space: nowrap;
+
+      &:hover {
+        background: #e46200;
+        border-color: #e46200;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+<nav class="main-header">
+  <div class="container">
+    <div class="header-inner d-flex align-items-center justify-content-between gap-3">
+
+      <!-- Logo — always visible -->
+      <a routerLink="/" class="logo d-flex align-items-center gap-2 flex-shrink-0">
+        <i class="pi pi-graduation-cap"></i>
+        <span>E-tutor</span>
+      </a>
+
+      <!-- Search — main layout only, hidden on mobile -->
+      @if (showSearch()) {
+        <div class="search-wrapper flex-grow-1 d-none d-md-block">
+          <p-iconfield>
+            <p-inputicon styleClass="pi pi-search" />
+            <input pInputText placeholder="What do you want to learn..." />
+          </p-iconfield>
+        </div>
+      }
+
+      <!-- Actions -->
+      <div class="d-flex align-items-center gap-2 flex-shrink-0">
+        @if (auth.isAuthenticated()) {
+          <span class="user-name">{{ auth.currentUser()?.name }}</span>
+
+        } @else if (showSearch()) {
+          <!-- Main layout: Create Account + Sign In -->
+          <div class="d-none d-sm-block">
+            <p-button label="Create Account" variant="outlined" styleClass="outline-btn" [routerLink]="['/auth/signUp']" />
+          </div>
+          <p-button label="Sign In" styleClass="solid-btn" [routerLink]="['/auth/login']" />
+
+        } @else {
+          <!-- Auth layout: hint text + Create Account -->
+          <span class="hint-text d-none d-sm-inline">Don't have account?</span>
+          <p-button label="Create Account" variant="outlined" styleClass="outline-btn" [routerLink]="['/auth/signUp']" />
+        }
+      </div>
+
+    </div>
+  </div>
+</nav>

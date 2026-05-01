@@ -1,0 +1,168 @@
+@use 'sass:color';
+@use '../../../../assets/styles/shared/colors' as *;
+@use '../../../../assets/styles/shared/variables' as *;
+@use '../../../../assets/styles/shared/functions' as *;
+
+.footer {
+  background: $grey-900;
+
+  // ── Logo ─────────────────────────────────────────────
+  &__logo {
+    text-decoration: none;
+    margin-bottom: pxToRem(16);
+    display: inline-flex;
+
+    i {
+      color: $primary;
+      font-size: pxToRem(22);
+    }
+
+    span {
+      font-size: pxToRem(20);
+      font-weight: $font-weight-bold;
+      color: $white;
+    }
+  }
+
+  // ── Description ──────────────────────────────────────
+  &__desc {
+    color: $grey_500;
+    font-size: pxToRem(14);
+    line-height: 1.65;
+    margin-bottom: pxToRem(20);
+  }
+
+  // ── Social icons ─────────────────────────────────────
+  &__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: pxToRem(36);
+    height: pxToRem(36);
+    border-radius: 50%;
+    background: rgba($white, 0.07);
+    color: $white;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+
+    i {
+      font-size: pxToRem(14);
+    }
+
+    &:hover {
+      background: rgba($primary, 0.2);
+      color: $primary;
+    }
+
+    &--active {
+      background: $primary;
+      color: $white;
+
+      &:hover {
+        background: color.adjust($primary, $lightness: -8%);
+        color: $white;
+      }
+    }
+  }
+
+  // ── Column headings ──────────────────────────────────
+  &__heading {
+    font-size: pxToRem(13);
+    font-weight: $font-weight-semiBold;
+    color: $white;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: pxToRem(20);
+  }
+
+  // ── Link lists ───────────────────────────────────────
+  &__list {
+    li {
+      margin-bottom: pxToRem(12);
+
+      a {
+        color: $grey_500;
+        font-size: pxToRem(14);
+        text-decoration: none;
+        transition: color 0.2s;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  &__become-link {
+    display: inline-flex;
+    align-items: center;
+    gap: pxToRem(6);
+    font-weight: $font-weight-medium;
+
+    i {
+      font-size: pxToRem(12);
+    }
+  }
+
+  // ── App store badges ─────────────────────────────────
+  &__app-badge {
+    display: flex;
+    align-items: center;
+    gap: pxToRem(10);
+    padding: pxToRem(10) pxToRem(14);
+    border: 1px solid rgba($white, 0.18);
+    border-radius: pxToRem(8);
+    text-decoration: none;
+    max-width: pxToRem(170);
+    transition: border-color 0.2s;
+
+    &:hover {
+      border-color: rgba($primary, 0.5);
+    }
+  }
+
+  &__app-icon {
+    font-size: pxToRem(26);
+    color: $white;
+    flex-shrink: 0;
+  }
+
+  &__app-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__app-sub {
+    font-size: pxToRem(11);
+    color: $grey_500;
+    line-height: 1.3;
+  }
+
+  &__app-name {
+    font-size: pxToRem(14);
+    font-weight: $font-weight-semiBold;
+    color: $white;
+    line-height: 1.3;
+  }
+
+  // ── Bottom copyright bar ──────────────────────────────
+  &__bottom {
+    border-top: 1px solid rgba($white, 0.08);
+    padding: pxToRem(20) 0;
+
+    p {
+      font-size: pxToRem(14);
+      color: $footer_copyright;
+    }
+
+    a {
+      color: $white;
+      font-weight: $font-weight-semiBold;
+      text-decoration: none;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}

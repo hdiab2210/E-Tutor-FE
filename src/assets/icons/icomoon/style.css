@@ -1,0 +1,102 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?7sdq57');
+  src:  url('fonts/icomoon.eot?7sdq57#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?7sdq57') format('truetype'),
+    url('fonts/icomoon.woff?7sdq57') format('woff'),
+    url('fonts/icomoon.svg?7sdq57#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-apple:before {
+  content: "\e900";
+  color: #fff;
+}
+.icon-ChartBarHorizontal:before {
+  content: "\e901";
+  color: #e34444;
+}
+.icon-Cpu:before {
+  content: "\e902";
+  color: #564ffd;
+}
+.icon-CreditCard:before {
+  content: "\e903";
+  color: #fd8e1f;
+}
+.icon-Eye:before {
+  content: "\e904";
+}
+.icon-facebook:before {
+  content: "\e905";
+  color: #fff;
+}
+.icon-filters:before {
+  content: "\e906";
+}
+.icon-google .path1:before {
+  content: "\e907";
+  color: rgb(251, 187, 0);
+}
+.icon-google .path2:before {
+  content: "\e908";
+  margin-left: -1em;
+  color: rgb(81, 142, 248);
+}
+.icon-google .path3:before {
+  content: "\e909";
+  margin-left: -1em;
+  color: rgb(40, 180, 70);
+}
+.icon-google .path4:before {
+  content: "\e90a";
+  margin-left: -1em;
+  color: rgb(241, 67, 54);
+}
+.icon-google-play:before {
+  content: "\e90b";
+}
+.icon-Handshake:before {
+  content: "\e90c";
+  color: #23bd33;
+}
+.icon-Instragarm:before {
+  content: "\e90d";
+  color: #fff;
+}
+.icon-Linkedin:before {
+  content: "\e90e";
+  color: #fff;
+}
+.icon-MagnifyingGlass:before {
+  content: "\e90f";
+}
+.icon-Star:before {
+  content: "\e910";
+  color: #fd8e1f;
+}
+.icon-Twitter:before {
+  content: "\e911";
+  color: #fff;
+}
+.icon-youtube:before {
+  content: "\e912";
+  color: #fff;
+}

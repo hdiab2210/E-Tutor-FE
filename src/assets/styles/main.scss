@@ -1,0 +1,25 @@
+@use "shared/variables" as *;
+@use "shared/font";
+@use "shared/functions";
+@use "shared/extends";
+@use "shared/buttons";
+@use "shared/common";
+@use "shared/mixins";
+
+
+* {
+  font-size: 16px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: $regular;
+  font-weight: $font-weight-regular;
+  text-decoration: none;
+  list-style: none;
+  @media screen and (max-width: 1280px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 1024px) {
+    font-size: 12px;
+  }
+}
