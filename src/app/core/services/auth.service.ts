@@ -1,44 +1,46 @@
-import { Injectable, signal, computed } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AuthActions } from '../../store/auth/auth.actions';
+import { selectCurrentUser, selectIsAuthenticated } from '../../store/auth/auth.selectors';
 
 export interface User {
   id: string;
   name: string;
   email: string;
   token: string;
+  refreshToken: string
 }
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private readonly TOKEN_KEY = 'auth_token';
-  private readonly USER_KEY = 'auth_user';
+  private readonly store = inject(Store);
 
-  private _currentUser = signal<User | null>(this.loadUserFromStorage());
-
-  readonly currentUser = this._currentUser.asReadonly();
-  readonly isAuthenticated = computed(() => this._currentUser() !== null);
+  readonly currentUser = this.store.selectSignal(selectCurrentUser);
+  readonly isAuthenticated = this.store.selectSignal(selectIsAuthenticated);
 
   login(user: User): void {
-    localStorage.setItem(this.TOKEN_KEY, user.token);
-    localStorage.setItem(this.USER_KEY, JSON.stringify(user));
-    this._currentUser.set(user);
+    this.store.dispatch(AuthActions.login({ user }));
   }
 
   logout(): void {
-    localStorage.removeItem(this.TOKEN_KEY);
-    localStorage.removeItem(this.USER_KEY);
-    this._currentUser.set(null);
+    this.store.dispatch(AuthActions.logout());
   }
 
   getToken(): string | null {
-    return localStorage.getItem(this.TOKEN_KEY);
+    return typeof localStorage !== 'undefined' ? localStorage.getItem('auth_token') : null;
   }
 
-  private loadUserFromStorage(): User | null {
+  getRefreshToken(): string | null {
     try {
-      const raw = localStorage.getItem(this.USER_KEY);
-      return raw ? (JSON.parse(raw) as User) : null;
+      const raw = typeof localStorage !== 'undefined' ? localStorage.getItem('auth_user') : null;
+      if (!raw) return null;
+      return (JSON.parse(raw) as User)?.refreshToken ?? null;
     } catch {
       return null;
     }
+  }
+
+  updateTokens(token: string, refreshToken: string): void {
+    this.store.dispatch(AuthActions.tokenRefreshed({ token, refreshToken }));
   }
 }

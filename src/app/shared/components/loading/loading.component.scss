@@ -1,0 +1,27 @@
+@use '../../../../assets/styles/shared/colors.scss' as *;
+
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-spinner {
+  &__ring {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 4px solid $grey_100;
+    border-top-color: $primary;
+    animation: spin 0.75s linear infinite;
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

@@ -8,7 +8,7 @@ export const routes: Routes = [
   {
     path: '',
     component: MainLayout,
-    // canActivate: [authGuard],
+    canActivate: [authGuard],
     children: [
       {
         path: '',
@@ -31,6 +31,19 @@ export const routes: Routes = [
         path: '',
         loadChildren: () =>
           import('./features/auth/auth.routes').then(m => m.AUTH_ROUTES)
+      }
+    ]
+  },
+  {
+    path: '**',
+    component: AuthLayout,
+    children: [
+      {
+        path: '',
+        loadComponent: () =>
+          import('./shared/components/not-found/not-found.component').then(
+            m => m.NotFoundComponent
+          )
       }
     ]
   }

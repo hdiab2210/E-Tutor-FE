@@ -1,0 +1,49 @@
+@use '../../../../assets/styles/shared/functions.scss' as *;
+
+.not-found {
+  min-height: calc(100vh - 220px);
+  display: flex;
+  align-items: center;
+
+  &__card {
+    border-radius: 8px;
+    padding: pxToRem(40) pxToRem(32) pxToRem(32) pxToRem(180);
+  }
+
+  &__label {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #c8d4e0;
+    margin-bottom: 0.5rem;
+  }
+
+  &__title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+  }
+
+  &__desc {
+    color: #6c757d;
+    line-height: 1.7;
+    margin-bottom: 1.75rem;
+    font-size: 0.95rem;
+  }
+
+  &__btn {
+    background-color: #ff6634;
+    color: #fff;
+    border: none;
+    padding: 0.65rem 1.75rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: #e8542a;
+    }
+  }
+}

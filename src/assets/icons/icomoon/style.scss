@@ -1,0 +1,143 @@
+@use "variables" as *;
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:  url('../../#{$icomoon-font-path}/#{$icomoon-font-family}.eot?yfvrxy');
+  src:  url('../../#{$icomoon-font-path}/#{$icomoon-font-family}.eot?yfvrxy#iefix') format('embedded-opentype'),
+    url('../../#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?yfvrxy') format('truetype'),
+    url('../../#{$icomoon-font-path}/#{$icomoon-font-family}.woff?yfvrxy') format('woff'),
+    url('../../#{$icomoon-font-path}/#{$icomoon-font-family}.svg?yfvrxy##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-apple {
+  &:before {
+    content: $icon-apple;     
+    color: #fff;
+  }
+}
+.icon-ChartBarHorizontal {
+  &:before {
+    content: $icon-ChartBarHorizontal;     
+    color: #e34444;
+  }
+}
+.icon-Cpu {
+  &:before {
+    content: $icon-Cpu;     
+    color: #564ffd;
+  }
+}
+.icon-CreditCard {
+  &:before {
+    content: $icon-CreditCard;     
+    color: #fd8e1f;
+  }
+}
+.icon-Eye {
+  &:before {
+    content: $icon-Eye; 
+  }
+}
+.icon-facebook {
+  &:before {
+    content: $icon-facebook;     
+    color: #fff;
+  }
+}
+.icon-filters {
+  &:before {
+    content: $icon-filters; 
+  }
+}
+.icon-google .path1 {
+  &:before {
+    content: $icon-google-path1;  
+    color: rgb(251, 187, 0);
+  }
+}
+.icon-google .path2 {
+  &:before {
+    content: $icon-google-path2;  
+    margin-left: -1em;  
+    color: rgb(81, 142, 248);
+  }
+}
+.icon-google .path3 {
+  &:before {
+    content: $icon-google-path3;  
+    margin-left: -1em;  
+    color: rgb(40, 180, 70);
+  }
+}
+.icon-google .path4 {
+  &:before {
+    content: $icon-google-path4;  
+    margin-left: -1em;  
+    color: rgb(241, 67, 54);
+  }
+}
+.icon-google-play {
+  &:before {
+    content: $icon-google-play; 
+  }
+}
+.icon-Handshake {
+  &:before {
+    content: $icon-Handshake;     
+    color: #23bd33;
+  }
+}
+.icon-Instragarm {
+  &:before {
+    content: $icon-Instragarm;     
+    color: #fff;
+  }
+}
+.icon-Linkedin {
+  &:before {
+    content: $icon-Linkedin;     
+    color: #fff;
+  }
+}
+.icon-MagnifyingGlass {
+  &:before {
+    content: $icon-MagnifyingGlass; 
+  }
+}
+.icon-Star {
+  &:before {
+    content: $icon-Star;     
+    color: #fd8e1f;
+  }
+}
+.icon-Twitter {
+  &:before {
+    content: $icon-Twitter;     
+    color: #fff;
+  }
+}
+.icon-youtube {
+  &:before {
+    content: $icon-youtube;     
+    color: #fff;
+  }
+}
+

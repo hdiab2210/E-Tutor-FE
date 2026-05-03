@@ -4,8 +4,7 @@
 
       <!-- Logo — always visible -->
       <a routerLink="/" class="logo d-flex align-items-center gap-2 flex-shrink-0">
-        <i class="pi pi-graduation-cap"></i>
-        <span>E-tutor</span>
+        <img src="assets/images/logo/Link_logo_vertical_color_dark_RGB.svg" alt="logo">
       </a>
 
       <!-- Search — main layout only, hidden on mobile -->
@@ -22,6 +21,13 @@
       <div class="d-flex align-items-center gap-2 flex-shrink-0">
         @if (auth.isAuthenticated()) {
           <span class="user-name">{{ auth.currentUser()?.name }}</span>
+          <p-button
+            label="Sign Out"
+            variant="outlined"
+            styleClass="signout-btn"
+            icon="pi pi-sign-out"
+            (onClick)="logout()"
+          />
 
         } @else if (showSearch()) {
           <!-- Main layout: Create Account + Sign In -->

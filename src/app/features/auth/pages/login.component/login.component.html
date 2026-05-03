@@ -1,1 +1,90 @@
-<p>login.component works!</p>
+<div class="login-page">
+
+  <!-- Left: Illustration -->
+  <div class="login-illustration">
+    <img src="assets/images/signIn/sign-in.svg" alt="Login illustration" />
+  </div>
+
+  <!-- Right: Form -->
+  <div class="login-form-section">
+    <div class="login-form-wrapper">
+      <h1 class="login-title">Sign in to your account</h1>
+
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+        <!-- Email -->
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input
+            pInputText
+            type="text"
+            formControlName="email"
+            placeholder="Username or email address..."
+            [ngClass]="{ 'is-invalid': isFieldInvalid('email') }"
+          />
+          @if (isFieldInvalid('email')) {
+            @if (form.get('email')?.errors?.['required']) {
+              <span class="error-text">Email is required</span>
+            } @else {
+              <span class="error-text">Please enter a valid email</span>
+            }
+          }
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <div class="password-field">
+            <input
+              pInputText
+              [type]="showPassword() ? 'text' : 'password'"
+              formControlName="password"
+              placeholder="Password"
+              [ngClass]="{ 'is-invalid': isFieldInvalid('password') }"
+            />
+            <button type="button" class="eye-btn" (click)="togglePasswordVisibility()">
+              <i class="pi" [ngClass]="showPassword() ? 'pi-eye' : 'pi-eye-slash'"></i>
+            </button>
+          </div>
+          @if (isFieldInvalid('password')) {
+            <span class="error-text">Password is required</span>
+          }
+        </div>
+
+        <!-- Remember me + Submit -->
+        <div class="form-footer">
+          <div class="remember-wrapper">
+            <p-checkbox formControlName="rememberMe" [binary]="true" inputId="rememberMe" />
+            <label for="rememberMe" class="remember-label">Remember me</label>
+          </div>
+          <button type="submit" class="signin-btn" [disabled]="isLoading()">
+            @if (isLoading()) {
+              <span>Signing in...</span>
+            } @else {
+              <span>Sign In</span>
+              <i class="pi pi-arrow-right"></i>
+            }
+          </button>
+        </div>
+
+      </form>
+
+      <!-- Divider -->
+      <div class="divider">
+        <span>SIGN IN WITH</span>
+      </div>
+
+      <!-- Google Button -->
+      <button type="button" class="google-btn" (click)="signInWithGoogle()">
+        <img src="assets/icons/google.svg" alt="Google" width="20" height="20" />
+        <span>Google</span>
+      </button>
+
+      <!-- Sign up link -->
+      <p class="signup-link">
+        Don't have an account? <a routerLink="/auth/signUp">Sign up</a>
+      </p>
+
+    </div>
+  </div>
+</div>

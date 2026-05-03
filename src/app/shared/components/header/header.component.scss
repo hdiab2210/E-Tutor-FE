@@ -86,6 +86,19 @@
       }
     }
 
+    .signout-btn.p-button {
+      background: transparent;
+      border: 1px solid #ef4444;
+      color: #ef4444;
+      border-radius: pxToRem(8);
+      font-size: pxToRem(14);
+      white-space: nowrap;
+
+      &:hover {
+        background: rgba(#ef4444, 0.06);
+      }
+    }
+
     .solid-btn.p-button {
       background: $primary;
       border-color: $primary;

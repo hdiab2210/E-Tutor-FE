@@ -1,5 +1,5 @@
 import { Component, inject, input } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
@@ -15,4 +15,10 @@ import { AuthService } from '../../../core/services/auth.service';
 export class HeaderComponent {
   readonly showSearch = input(true);
   readonly auth = inject(AuthService);
+  readonly router =inject(Router)
+
+  logout(): void {
+    this.auth.logout();
+    this.router.navigate(['/auth/login'])
+  }
 }
